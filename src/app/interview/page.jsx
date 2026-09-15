@@ -1,0 +1,1 @@
+export default function Interview() { return <div className="text-on-surface"><h1 className="text-2xl font-heading font-bold mb-4">Mock Interview Studio</h1><p>Split screen for video/avatar and coding challenge coming soon.</p></div> }
