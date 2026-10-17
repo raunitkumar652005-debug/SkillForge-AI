@@ -19,7 +19,7 @@ export const modules = [
     "id": 3,
     "number": "03",
     "title": "CSS Fundamentals — Selectors, Box Model, Display & Units",
-    "description": "Is module me CSS (Cascading Style Sheets) ki practical foundation cover ki gayi hai. Instructor ne HTML file ko external `.css` file se **link** ka...",
+    "description": "This module covers the practical foundation of CSS, including selectors, the Box Model, the display property, and the crucial concept of box-sizing.",
     "slug": "03_css_fundamentals_selectors_boxmodel_display_units",
     "status": "Not Started"
   },
@@ -27,7 +27,7 @@ export const modules = [
     "id": 4,
     "number": "04",
     "title": "CSS Layout — Flexbox & Responsive Design",
-    "description": "Is module me instructor **Flexbox** (CSS ka most-used layout system) aur **Responsive Design** ke concepts practically build karte hain — ek real \"...",
+    "description": "This module covers CSS layout techniques by building a responsive design using Flexbox and viewport-relative units.",
     "slug": "04_css_layout_flexbox_responsive_design",
     "status": "Not Started"
   },
@@ -35,7 +35,7 @@ export const modules = [
     "id": 5,
     "number": "05",
     "title": "JavaScript Fundamentals — History, Setup, Variables & Data Types",
-    "description": "Is module se **JavaScript** ki journey shuru hoti hai — full stack ka teesra core pillar (functionality/interactivity). Instructor pehle JavaScript...",
+    "description": "This module introduces JavaScript history, setup, core concepts of variables, and basic data types for building interactive websites.",
     "slug": "05_javascript_fundamentals_history_setup_variables_datatypes",
     "status": "Not Started"
   },
@@ -43,7 +43,7 @@ export const modules = [
     "id": 6,
     "number": "06",
     "title": "JavaScript Control Flow — Conditionals & Loops",
-    "description": "Is module me **Control Flow Statements** cover kiye gaye hain — wo statements jo decide karte hain ki program **kaise execute** hoga (kis order me,...",
+    "description": "This module covers JavaScript Control Flow statements, including decision-making with conditionals (if-else) and execution loops (for).",
     "slug": "06_javascript_control_flow_conditionals_loops",
     "status": "Not Started"
   },
@@ -51,7 +51,7 @@ export const modules = [
     "id": 7,
     "number": "07",
     "title": "JavaScript Functions",
-    "description": "Is module me **Functions** cover kiye gaye hain — JavaScript ka sabse powerful aur reusable code-organization tool. Instructor ne ek **juice-machin...",
+    "description": "This module covers JavaScript Functions, focusing on how to define, invoke, pass arguments, and return values using traditional and arrow functions.",
     "slug": "07_javascript_functions",
     "status": "Not Started"
   },
@@ -59,7 +59,7 @@ export const modules = [
     "id": 8,
     "number": "08",
     "title": "JavaScript Arrays & Array Methods",
-    "description": "Is module me **Arrays** cover kiye gaye hain — JavaScript ka fundamental data structure jo **multiple values ko ek single variable me** store karta...",
+    "description": "This module covers JavaScript Arrays, explaining how to store collections of data and manipulate them using essential built-in array methods.",
     "slug": "08_javascript_arrays_arraymethods",
     "status": "Not Started"
   },
@@ -67,7 +67,7 @@ export const modules = [
     "id": 9,
     "number": "09",
     "title": "Higher-Order Functions (map/filter/reduce), Hoisting & Rest Operator",
-    "description": "Is module me teen important JavaScript concepts cover kiye gaye hain: **Higher-Order Functions** (specifically `map`, `filter`, `reduce` — jo array...",
+    "description": "This module covers advanced JavaScript array iteration techniques, variable hoisting, and the rest operator.",
     "slug": "09_higherorderfunctions_hoisting_restoperator",
     "status": "Not Started"
   },
@@ -75,7 +75,7 @@ export const modules = [
     "id": 10,
     "number": "10",
     "title": "JavaScript Objects — Fundamentals, Dynamic Nature & for-in Loop",
-    "description": "Is module me **Objects** cover kiye gaye hain — JavaScript ka doosra major non-primitive data type, jo real-world entities ko **key-value pairs** k...",
+    "description": "This module covers fundamental JavaScript Objects, including object syntax, property manipulation, and key-value iteration techniques.",
     "slug": "10_javascript_objects_fundamentals",
     "status": "Not Started"
   },
@@ -83,7 +83,7 @@ export const modules = [
     "id": 11,
     "number": "11",
     "title": "Getters, Setters & Value vs Reference Types",
-    "description": "Is module me do important, aksar interview me poochhe jaane waale JavaScript concepts cover kiye gaye hain: **Getters aur Setters** (jo object prop...",
+    "description": "This module covers advanced JavaScript object concepts, including get/set keywords and the critical difference between Value and Reference types.",
     "slug": "11_getters_setters_valuevsreferencetypes",
     "status": "Not Started"
   },
@@ -91,7 +91,7 @@ export const modules = [
     "id": 12,
     "number": "12",
     "title": "JavaScript Built-in Objects & Methods — Math, String, Date & Error Handling",
-    "description": "Is module me JavaScript ke **Built-in Objects aur Methods** cover kiye gaye — pehle se defined utilities jo common tasks (mathematical calculations...",
+    "description": "This module covers essential built-in JavaScript objects like Math, String, and Date, along with standard error handling using try-catch blocks.",
     "slug": "12_js_builtinobjects_math_string_date_errorhandling",
     "status": "Not Started"
   },
@@ -99,7 +99,7 @@ export const modules = [
     "id": 13,
     "number": "13",
     "title": "DOM Manipulation — Selectors, Content Changes & Basic Events",
-    "description": "Is module me HTML, CSS, aur JavaScript **teeno ek saath** kaam karte hue dikhaye gaye — jise instructor \"puri series ka meaningful moment\" kehte ha...",
+    "description": "This module covers DOM Manipulation, demonstrating how to bridge JavaScript and HTML to select elements, update content, and listen to user events.",
     "slug": "13_dom_manipulation_selectors_content_events",
     "status": "Not Started"
   },
@@ -107,7 +107,7 @@ export const modules = [
     "id": 14,
     "number": "14",
     "title": "Git & GitHub — Version Control Fundamentals",
-    "description": "Is module me **Git** aur **GitHub** cover kiye gaye — koi bhi developer ke liye ek non-negotiable skill. Instructor real-world problem se shuru kar...",
+    "description": "This module introduces Git and GitHub, explaining the essential version control workflow for tracking code changes and collaborating remotely.",
     "slug": "14_git_github_versioncontrol",
     "status": "Not Started"
   },
@@ -115,7 +115,7 @@ export const modules = [
     "id": 15,
     "number": "15",
     "title": "Asynchronous JavaScript — Promises, Fetch API, Async/Await & Axios",
-    "description": "Is module me **Asynchronous Programming** — JavaScript ka ek foundational-lekin-tricky concept — cover kiya gaya hai, jo tab crucial ban jaata hai ...",
+    "description": "This module covers Asynchronous JavaScript concepts, including the Event Loop, Promises, and data fetching techniques using async/await and Axios.",
     "slug": "15_async_js_promises_fetch_asyncawait_axios",
     "status": "Not Started"
   },
@@ -123,7 +123,7 @@ export const modules = [
     "id": 16,
     "number": "16",
     "title": "React.js Fundamentals — History, Virtual DOM & Setup",
-    "description": "Is module se **React.js** ki journey shuru hoti hai — instructor isko \"real development\" ki shuruaat kehte hain (jabki HTML/CSS/vanilla-JS ko \"foun...",
+    "description": "This module introduces React, covering its history, Component-Based Architecture, the Virtual DOM, and the foundational setup of a React environment.",
     "slug": "16_react_fundamentals_history_virtualdom_setup",
     "status": "Not Started"
   },
@@ -131,7 +131,7 @@ export const modules = [
     "id": 17,
     "number": "17",
     "title": "JSX & React Components — Props, Rendering & Destructuring",
-    "description": "Is module me React ke sabse core, day-to-day-use concepts cover kiye gaye: **Components banana**, **Export/Import** (default vs named), **Rendering...",
+    "description": "This module covers core daily React development patterns, including creating components, rendering elements, and passing data securely using Props.",
     "slug": "17_jsx_components_props_destructuring",
     "status": "Not Started"
   },
@@ -139,7 +139,7 @@ export const modules = [
     "id": 18,
     "number": "18",
     "title": "Conditional Rendering in React",
-    "description": "Is module me **Conditional Rendering** cover kiya gaya — ek core React pattern jisse condition ke basis pe decide kiya jaata hai ki **kaunsa compon...",
+    "description": "This module covers Conditional Rendering in React, using if-else statements, ternary operators, and logical AND operators to control UI state dynamically.",
     "slug": "18_react_conditionalrendering",
     "status": "Not Started"
   },
@@ -147,7 +147,7 @@ export const modules = [
     "id": 19,
     "number": "19",
     "title": "React Project Structure (Components vs Pages) & CSS Modules",
-    "description": "Is module me do practical, real-world React development concepts cover kiye gaye: **recommended folder architecture** (`components` folder vs `page...",
+    "description": "This module covers practical project architecture for React, separating components from pages, and introduces CSS Modules to avoid class name collisions.",
     "slug": "19_react_projectstructure_cssmodules",
     "status": "Not Started"
   },
@@ -155,7 +155,7 @@ export const modules = [
     "id": 20,
     "number": "20",
     "title": "React Hooks — useState & useEffect",
-    "description": "Is module me React ke **do sabse important Hooks** cover kiye gaye: **`useState`** (component ki \"state\"/current-data ko manage karna, aur UI ko us...",
+    "description": "This module covers the two most critical React Hooks: useState for managing component state and useEffect for handling side effects like data fetching.",
     "slug": "20_react_hooks_usestate_useeffect",
     "status": "Not Started"
   },
@@ -163,7 +163,7 @@ export const modules = [
     "id": 21,
     "number": "21",
     "title": "React Forms Handling — Controlled Inputs, useRef & Other Hooks",
-    "description": "Is module me React me **forms handle karna** cover kiya gaya — do alag approaches ke saath: **`onChange` + State (Controlled Components)**, aur **`...",
+    "description": "This module covers form handling techniques in React, comparing Controlled Components using state against Uncontrolled Components using the useRef hook.",
     "slug": "21_react_forms_useref_otherhooks",
     "status": "Not Started"
   },
@@ -171,7 +171,7 @@ export const modules = [
     "id": 22,
     "number": "22",
     "title": "Lifting State Up & Prop Drilling",
-    "description": "Is module me do closely-related, interview-critical React concepts cover kiye gaye: **Lifting State Up** (jab multiple components ko ek **common/sh...",
+    "description": "This module covers advanced React state architecture concepts like Lifting State Up for sharing data, and demonstrates the limitations of Prop Drilling.",
     "slug": "22_react_liftingstateup_propdrilling",
     "status": "Not Started"
   },
@@ -179,7 +179,7 @@ export const modules = [
     "id": 23,
     "number": "23",
     "title": "React Router — Multi-Page Navigation",
-    "description": "Is module me **React Router** cover kiya gaya — ek essential library jo React apps (jo fundamentally **Single Page Applications/SPA** hote hain) me...",
+    "description": "This module covers React Router, enabling multi-page URL navigation and routing architecture within Single Page Applications.",
     "slug": "23_react_router_navigation",
     "status": "Not Started"
   },
@@ -187,7 +187,7 @@ export const modules = [
     "id": 24,
     "number": "24",
     "title": "Local Storage, Session Storage & useNavigate",
-    "description": "Is module me **Browser Storage** — `localStorage` aur `sessionStorage` — cover kiya gaya, jo browser ke andar client-side data persist karne ke liy...",
+    "description": "This module covers Browser Storage methods like localStorage and sessionStorage for persisting client-side data, and introduces programmatic navigation.",
     "slug": "24_localstorage_sessionstorage_usenavigate",
     "status": "Not Started"
   },
@@ -195,7 +195,7 @@ export const modules = [
     "id": 25,
     "number": "25",
     "title": "Redux Toolkit — Global State Management",
-    "description": "Is module me **Redux** — ek advanced state management library — cover kiya gaya. Instructor pehle ek simple analogy (mitti lane ke different ways) ...",
+    "description": "This module introduces Redux Toolkit for scalable global state management, demonstrating its implementation alongside a traditional React application.",
     "slug": "25_redux_toolkit_globalstatemanagement",
     "status": "Not Started"
   },
@@ -203,7 +203,7 @@ export const modules = [
     "id": 26,
     "number": "26",
     "title": "Node.js & Express.js Fundamentals — Backend Development Introduction",
-    "description": "Is module se **Backend development** shuru hota hai — course ka doosra bada arc. Instructor pehle explain karte hain ki frontend credentials (jaise...",
+    "description": "This module introduces backend development with Node.js and Express.js, covering server architecture, the Request-Response cycle, and API testing with Postman.",
     "slug": "26_nodejs_expressjs_fundamentals_backend_intro",
     "status": "Not Started"
   },
@@ -211,7 +211,7 @@ export const modules = [
     "id": 27,
     "number": "27",
     "title": "Express.js Routing, HTTP Methods, Controllers & Middleware",
-    "description": "Is module me Express.js ka deeper, organized architecture cover kiya gaya — real-world backend projects kaise structure karte hain. Instructor ne d...",
+    "description": "This module covers structured Express.js architecture, demonstrating the separation of routes and controllers alongside essential JSON parsing middleware.",
     "slug": "27_expressjs_routing_controllers_middleware",
     "status": "Not Started"
   },
@@ -219,7 +219,7 @@ export const modules = [
     "id": 28,
     "number": "28",
     "title": "MongoDB & Mongoose — Schema, Models, CRUD Operations & .env Setup",
-    "description": "Is module me **MongoDB** (NoSQL database) aur **Mongoose** (Node.js ke liye MongoDB ODM/library) cover kiye gaye — including MongoDB Atlas (cloud d...",
+    "description": "This module covers MongoDB and Mongoose, focusing on cloud database setup, Schema modeling, and performing CRUD operations in a full-stack environment.",
     "slug": "28_mongodb_mongoose_schema_crud_env",
     "status": "Not Started"
   },
@@ -227,7 +227,7 @@ export const modules = [
     "id": 29,
     "number": "29",
     "title": "Authentication — bcrypt, JWT & Cookies",
-    "description": "Is module me **Authentication aur Authorization** — backend ke sabse important security topics — cover kiye gaye. Instructor ne pehle dono terms ka...",
+    "description": "This module covers essential backend security, implementing User Registration with password hashing, and Login APIs using JSON Web Tokens (JWT).",
     "slug": "29_authentication_bcrypt_jwt_cookies",
     "status": "Not Started"
   },
@@ -235,7 +235,7 @@ export const modules = [
     "id": 30,
     "number": "30",
     "title": "Authorization Middleware & Protected Routes",
-    "description": "Is module me **Authorization Middleware** cover kiya gaya — ek reusable middleware function jo protected API routes pe **automatically JWT token ve...",
+    "description": "This module covers Authorization Middleware, creating reusable functions to automatically verify JWT tokens and secure protected API routes.",
     "slug": "30_authorization_middleware_protected_routes",
     "status": "Not Started"
   },
@@ -243,7 +243,7 @@ export const modules = [
     "id": 31,
     "number": "31",
     "title": "Full-Stack Integration, Capstone Project & Deployment",
-    "description": "Is module me poore course ki culmination hai — ek complete **Notes Maker App** (full-stack) banaya gaya jisme React frontend + Express backend + Mo...",
+    "description": "This module culminates the course by integrating the frontend, backend, database, and authentication into a Full-Stack application deployed to production.",
     "slug": "31_fullstack_integration_capstone_deployment",
     "status": "Not Started"
   }

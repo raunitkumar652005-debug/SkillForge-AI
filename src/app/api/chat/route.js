@@ -1,8 +1,13 @@
 import { NextResponse } from 'next/server';
 import clientPromise from '@/lib/db';
+import { getUserQuery, getUserIdForStorage } from '@/lib/auth-utils';
+import { requireSubscription } from '@/lib/subscriptions';
 
 export async function POST(request) {
   try {
+    const { user, errorResponse } = await requireSubscription();
+    if (errorResponse) return errorResponse;
+
     const { message, session_id } = await request.json();
 
     if (!message || !session_id) {
@@ -15,23 +20,22 @@ export async function POST(request) {
     const LYZR_API_KEY = process.env.LYZR_API_KEY;
     const LYZR_AGENT_ID = process.env.LYZR_AGENT_ID;
 
-    // Temporary local user identity until authentication is implemented
-    const TEMPORARY_USER_ID = 'local-dev-user-temp';
+    const storageUserId = getUserIdForStorage(user.id);
     
     // Connect to DB
     const client = await clientPromise;
     const db = client.db('webdev-mentor-ai');
 
-    // Find conversation to attach messages to
+    // Find conversation to attach messages to, strictly scoped to this user
     let conversation = await db.collection('conversations').findOne({
-      userId: TEMPORARY_USER_ID,
+      ...getUserQuery(user.id),
       sessionId: session_id
     });
     
     if (!conversation) {
       // Create it now on first message
       const newConv = {
-        userId: TEMPORARY_USER_ID,
+        userId: storageUserId,
         sessionId: session_id,
         title: 'New Conversation',
         createdAt: new Date(),
@@ -58,9 +62,9 @@ export async function POST(request) {
         : message;
     }
 
-    // Update conversation
+    // Update conversation, strictly scoped to this user
     await db.collection('conversations').updateOne(
-      { _id: conversation._id },
+      { _id: conversation._id, ...getUserQuery(user.id) },
       { $set: updatePayload }
     );
 
@@ -78,7 +82,7 @@ export async function POST(request) {
       }
       
       const lyzrPayload = {
-        user_id: TEMPORARY_USER_ID,
+        user_id: user.id,
         agent_id: LYZR_AGENT_ID,
         session_id: session_id,
         message: message,

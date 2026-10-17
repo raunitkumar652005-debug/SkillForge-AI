@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local test scripts and scratch files
+test_chat.js
+scratch/
+scratch_check.mjs

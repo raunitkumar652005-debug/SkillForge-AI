@@ -2,9 +2,14 @@ import { NextResponse } from 'next/server';
 import clientPromise from '@/lib/db';
 import crypto from 'crypto';
 import { ObjectId } from 'mongodb';
+import { getUserQuery } from '@/lib/auth-utils';
+import { requireSubscription } from '@/lib/subscriptions';
 
 export async function GET(req) {
   try {
+    const { user, errorResponse } = await requireSubscription();
+    if (errorResponse) return errorResponse;
+
     const { searchParams } = new URL(req.url);
     const conversationIdParam = searchParams.get('conversationId');
     const isNew = searchParams.get('new') === 'true';
@@ -19,9 +24,6 @@ export async function GET(req) {
       });
     }
 
-    // For now, use a temporary local user ID
-    const userId = 'local-dev-user-temp';
-    
     const client = await clientPromise;
     const db = client.db('webdev-mentor-ai');
     
@@ -29,11 +31,11 @@ export async function GET(req) {
     let messages = [];
     
     if (conversationIdParam) {
-      // Find specific conversation
+      // Find specific conversation belonging to this user
       try {
         conversation = await db.collection('conversations').findOne({
           _id: new ObjectId(conversationIdParam),
-          userId
+          ...getUserQuery(user.id)
         });
       } catch (e) {
         return NextResponse.json({ error: 'Invalid conversation ID' }, { status: 400 });
@@ -45,7 +47,7 @@ export async function GET(req) {
     } else {
       // Find the latest active conversation for the user
       conversation = await db.collection('conversations').findOne(
-        { userId },
+        getUserQuery(user.id),
         { sort: { updatedAt: -1 } }
       );
     }

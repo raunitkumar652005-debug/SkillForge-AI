@@ -1,83 +1,129 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { 
   LayoutDashboard, 
   Bot, 
   BrainCircuit, 
   Video, 
-  Bug, 
   BookOpen, 
   FolderGit2, 
   LineChart, 
   Settings,
   GraduationCap,
+  Sparkles,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Menu,
+  X
 } from "lucide-react"
 
 export function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false)
+  const [isMobileOpen, setIsMobileOpen] = useState(false)
+  const pathname = usePathname()
+
+  // Close mobile sidebar on route change
+  useEffect(() => {
+    setIsMobileOpen(false)
+  }, [pathname])
+
   const navItems = [
     { name: "Dashboard", href: "/", icon: LayoutDashboard },
     { name: "AI Mentor", href: "/mentor", icon: Bot },
     { name: "Quiz Mode", href: "/quiz", icon: BrainCircuit },
     { name: "Mock Interview", href: "/interview", icon: Video },
-    { name: "Debugging", href: "/debugging", icon: Bug },
     { name: "Revision", href: "/revision", icon: BookOpen },
     { name: "Projects", href: "/projects", icon: FolderGit2 },
     { name: "Learning", href: "/learning", icon: GraduationCap },
     { name: "Analytics", href: "/analytics", icon: LineChart },
+    { name: "Pricing & Plans", href: "/pricing", icon: Sparkles },
   ]
 
   return (
-    <div className={`${isCollapsed ? 'w-20' : 'w-64'} transition-all duration-300 glass flex-shrink-0 border-r border-outline-variant/30 hidden md:flex flex-col relative group/sidebar`}>
-      {/* Collapse Toggle Button */}
+    <>
+      {/* Mobile Menu Toggle Button */}
       <button 
-        onClick={() => setIsCollapsed(!isCollapsed)}
-        className="absolute -right-3 top-6 w-6 h-6 bg-surface border border-outline-variant/30 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/50 transition-colors z-20 shadow-sm"
-        title={isCollapsed ? "Expand Sidebar" : "Collapse Sidebar"}
+        onClick={() => setIsMobileOpen(true)}
+        className="md:hidden fixed top-3 left-4 z-40 w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-bright border border-outline-variant/30 glass transition-colors"
+        title="Open Navigation"
       >
-        {isCollapsed ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
+        <Menu size={20} />
       </button>
 
-      <div className="h-16 flex items-center justify-center border-b border-outline-variant/30 overflow-hidden">
-        <div className={`flex items-center gap-3 text-primary font-heading font-bold text-lg tracking-tight ${isCollapsed ? 'px-0' : 'px-6 w-full'}`}>
+      {/* Mobile Overlay */}
+      {isMobileOpen && (
+        <div 
+          className="md:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+          onClick={() => setIsMobileOpen(false)}
+        />
+      )}
+
+      {/* Sidebar Container */}
+      <div className={`
+        ${isCollapsed ? 'md:w-20' : 'md:w-64'} 
+        w-64
+        fixed md:static inset-y-0 left-0 z-50
+        transition-all duration-300 ease-in-out
+        ${isMobileOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+        glass flex-shrink-0 border-r border-outline-variant/30 
+        flex flex-col group/sidebar
+      `}>
+        
+        {/* Mobile Close Button */}
+        <button
+          onClick={() => setIsMobileOpen(false)}
+          className="md:hidden absolute right-4 top-5 text-on-surface-variant hover:text-primary transition-colors"
+        >
+          <X size={20} />
+        </button>
+
+        {/* Collapse Toggle Button (Desktop Only) */}
+        <button 
+          onClick={() => setIsCollapsed(!isCollapsed)}
+          className="hidden md:flex absolute -right-3 top-6 w-6 h-6 bg-surface border border-outline-variant/30 rounded-full items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/50 transition-colors z-20 shadow-sm"
+          title={isCollapsed ? "Expand Sidebar" : "Collapse Sidebar"}
+        >
+          {isCollapsed ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
+        </button>
+
+        <div className="h-16 flex items-center border-b border-outline-variant/30 overflow-hidden">
+        <div className={`flex items-center gap-3 text-primary font-heading font-bold text-lg tracking-tight ${isCollapsed ? 'md:px-0 md:justify-center px-6 w-full' : 'px-6 w-full'}`}>
           <div className="w-8 h-8 rounded-md bg-gradient-to-br from-primary to-secondary-container flex items-center justify-center shrink-0">
             <Bot size={20} className="text-[#060911]" />
           </div>
-          {!isCollapsed && <span className="truncate whitespace-nowrap">WebDev Mentor</span>}
+          <span className={`truncate whitespace-nowrap ${isCollapsed ? 'md:hidden' : ''}`}>WebDev Mentor</span>
         </div>
       </div>
-      <div className={`flex-1 py-6 space-y-1 overflow-y-auto ${isCollapsed ? 'px-2' : 'px-4'}`}>
-        {!isCollapsed && (
-          <div className="text-xs font-mono font-medium text-on-surface-variant mb-4 px-2 uppercase tracking-widest truncate">
-            Platform Tools
-          </div>
-        )}
+      <div className={`flex-1 py-6 space-y-1 overflow-y-auto ${isCollapsed ? 'md:px-2 px-4' : 'px-4'}`}>
+        <div className={`text-xs font-mono font-medium text-on-surface-variant mb-4 px-2 uppercase tracking-widest truncate ${isCollapsed ? 'md:hidden' : ''}`}>
+          Platform Tools
+        </div>
         {navItems.map((item) => (
           <Link
             key={item.name}
             href={item.href}
-            className={`flex items-center gap-3 py-2 rounded-md text-sm font-medium text-on-surface hover:bg-primary/10 hover:text-primary transition-colors group ${isCollapsed ? 'px-0 justify-center' : 'px-3'}`}
+            className={`flex items-center gap-3 py-2 rounded-md text-sm font-medium text-on-surface hover:bg-primary/10 hover:text-primary transition-colors group ${isCollapsed ? 'md:px-0 md:justify-center px-3' : 'px-3'}`}
             title={isCollapsed ? item.name : undefined}
           >
             <item.icon size={18} className="text-on-surface-variant group-hover:text-primary transition-colors shrink-0" />
-            {!isCollapsed && <span className="truncate">{item.name}</span>}
+            <span className={`truncate ${isCollapsed ? 'md:hidden' : ''}`}>{item.name}</span>
           </Link>
         ))}
       </div>
-      <div className={`p-4 border-t border-outline-variant/30 ${isCollapsed ? 'flex justify-center px-2' : ''}`}>
+      <div className={`p-4 border-t border-outline-variant/30 ${isCollapsed ? 'md:flex md:justify-center md:px-2 px-4' : 'px-4'}`}>
         <Link
           href="/settings"
-          className={`flex items-center gap-3 py-2 rounded-md text-sm font-medium text-on-surface hover:bg-surface-bright transition-colors ${isCollapsed ? 'px-0 justify-center w-full' : 'px-3'}`}
+          className={`flex items-center gap-3 py-2 rounded-md text-sm font-medium text-on-surface hover:bg-surface-bright transition-colors ${isCollapsed ? 'md:px-0 md:justify-center md:w-auto w-full px-3' : 'px-3'}`}
           title={isCollapsed ? "Settings" : undefined}
         >
           <Settings size={18} className="text-on-surface-variant shrink-0" />
-          {!isCollapsed && <span className="truncate">Settings</span>}
+          <span className={`truncate ${isCollapsed ? 'md:hidden' : ''}`}>Settings</span>
         </Link>
       </div>
     </div>
+    </>
   )
 }

@@ -4,11 +4,26 @@ import { BookOpen, Clock, BarChart, ChevronRight } from "lucide-react"
 import { Card } from "@/components/ui/Card"
 import { Badge } from "@/components/ui/Badge"
 import { Button } from "@/components/ui/Button"
+import clientPromise from '@/lib/db'
+import { getSessionUser, getUserQuery } from '@/lib/auth-utils'
+import { redirect } from 'next/navigation'
 
-export default function LearningPage() {
+export const dynamic = 'force-dynamic'
+
+export default async function LearningPage() {
+  const user = await getSessionUser();
+  if (!user) {
+    redirect('/login');
+  }
+
+  const client = await clientPromise;
+  const db = client.db('webdev-mentor-ai');
+  const progressDoc = await db.collection('user_progress').findOne(getUserQuery(user.id));
+  const userProgress = progressDoc?.modules || {};
   return (
-    <div className="flex-1 overflow-auto bg-background p-6 md:p-8">
-      <div className="max-w-6xl mx-auto space-y-8">
+    <div className="absolute inset-0 flex bg-background overflow-hidden z-10">
+      <div className="flex-1 overflow-y-auto p-6 md:p-8 custom-scrollbar">
+        <div className="max-w-6xl mx-auto space-y-8 pb-12">
         
         {/* Header Section */}
         <div className="space-y-4">
@@ -48,8 +63,8 @@ export default function LearningPage() {
                   <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-surface-container-high border border-outline-variant/50 text-on-surface font-mono font-bold text-lg group-hover:bg-primary/10 group-hover:text-primary transition-colors">
                     {mod.number}
                   </div>
-                  <Badge variant="secondary" className="bg-surface-container/50 border-outline-variant/30 text-on-surface-variant">
-                    {mod.status}
+                  <Badge variant={userProgress[mod.slug]?.status === 'Completed' ? 'primary' : userProgress[mod.slug]?.status === 'In Progress' ? 'info' : 'secondary'} className={`bg-surface-container/50 border-outline-variant/30 ${userProgress[mod.slug]?.status === 'Completed' ? 'text-primary' : 'text-on-surface-variant'}`}>
+                    {userProgress[mod.slug]?.status || 'Not Started'}
                   </Badge>
                 </div>
                 
@@ -77,6 +92,7 @@ export default function LearningPage() {
           ))}
         </div>
       </div>
+    </div>
     </div>
   )
 }

@@ -18,6 +18,8 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+import { AppLayout } from "@/components/layout/AppLayout";
+
 export const metadata = {
   title: "WebDev Mentor AI Platform",
   description: "Hyper-refined developer intelligence terminal",
@@ -30,14 +32,9 @@ export default function RootLayout({ children }) {
       className={`${inter.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="h-full flex overflow-hidden">
-        <Sidebar />
-        <div className="flex-1 flex flex-col h-full min-w-0">
-          <TopBar />
-          <main className="flex-1 overflow-y-auto p-6 relative">
-            <div className="absolute inset-0 bg-[#060911] -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/5 via-background to-background"></div>
-            {children}
-          </main>
-        </div>
+        <AppLayout sidebar={<Sidebar />} topbar={<TopBar />}>
+          {children}
+        </AppLayout>
       </body>
     </html>
   );
