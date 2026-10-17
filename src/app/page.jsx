@@ -102,7 +102,7 @@ export default async function Dashboard() {
                         cy="80"
                       />
                       <circle
-                        className="text-emerald-400 drop-shadow-[0_0_12px_rgba(52,211,153,0.6)] transition-all duration-1000 ease-out"
+                        className="text-secondary drop-shadow-[0_0_12px_rgba(56,217,197,0.6)] transition-all duration-1000 ease-out"
                         strokeWidth="10"
                         strokeDasharray={circumference}
                         strokeDashoffset={strokeDashoffset}
@@ -124,7 +124,7 @@ export default async function Dashboard() {
                   <div className="flex-1 space-y-6 w-full">
                     <div>
                       <h2 className="text-xl font-heading font-semibold text-on-surface mb-1">Full-Stack Curriculum</h2>
-                      <p className="text-sm text-on-surface-variant">Mastering the WebDev Mentor AI syllabus.</p>
+                      <p className="text-sm text-on-surface-variant">Mastering the SkillForge AI syllabus.</p>
                     </div>
                     
                     <div className="grid grid-cols-2 gap-4">
@@ -163,7 +163,7 @@ export default async function Dashboard() {
                     <div className="space-y-4">
                       {topActivities.map((act) => (
                         <div key={act.id} className="flex gap-3">
-                          <div className="mt-1 w-2 h-2 rounded-full bg-primary/50 shadow-[0_0_8px_rgba(6,182,212,0.8)] shrink-0"></div>
+                          <div className="mt-1 w-2 h-2 rounded-full bg-primary/70 shadow-[0_0_8px_rgba(145,133,255,0.8)] shrink-0"></div>
                           <div>
                             <p className="text-sm font-medium text-on-surface line-clamp-1">{act.title}</p>
                             <p className="text-xs text-on-surface-variant font-mono mt-0.5">{act.action} • {act.type}</p>
@@ -181,7 +181,7 @@ export default async function Dashboard() {
 
               <div className="grid grid-cols-2 gap-4">
                 <Link href="/mentor" className="group">
-                  <div className="h-full p-4 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-primary/50 hover:bg-surface-container-high transition-all shadow-[0_4px_12px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(6,182,212,0.15)] flex flex-col items-center justify-center text-center gap-2">
+                  <div className="h-full p-4 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-primary/50 hover:bg-surface-container-high transition-all shadow-[0_4px_12px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(145,133,255,0.2)] flex flex-col items-center justify-center text-center gap-2">
                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
                       <Bot size={20} />
                     </div>
@@ -189,7 +189,7 @@ export default async function Dashboard() {
                   </div>
                 </Link>
                 <Link href="/analytics" className="group">
-                  <div className="h-full p-4 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-secondary/50 hover:bg-surface-container-high transition-all shadow-[0_4px_12px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(168,85,247,0.15)] flex flex-col items-center justify-center text-center gap-2">
+                  <div className="h-full p-4 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-secondary/50 hover:bg-surface-container-high transition-all shadow-[0_4px_12px_rgba(0,0,0,0.2)] hover:shadow-[0_4px_20px_rgba(56,217,197,0.2)] flex flex-col items-center justify-center text-center gap-2">
                     <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
                       <Target size={20} />
                     </div>
@@ -229,14 +229,14 @@ export default async function Dashboard() {
                       </div>
                     </div>
                     <Link href={`/learning/modules/${currentModule.slug}`} className="w-full md:w-auto shrink-0">
-                      <Button variant="primary" className="w-full shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] transition-shadow px-8 py-6 text-lg rounded-xl">
+                      <Button variant="primary" className="w-full shadow-[0_0_20px_rgba(145,133,255,0.3)] hover:shadow-[0_0_30px_rgba(145,133,255,0.5)] transition-shadow px-8 py-6 text-lg rounded-xl">
                         Synthesize Module <ChevronRight size={20} className="ml-2" />
                       </Button>
                     </Link>
                   </>
                 ) : (
                   <div className="w-full py-10 flex flex-col items-center justify-center text-center">
-                    <Target size={48} className="text-emerald-400/50 mb-4 drop-shadow-[0_0_12px_rgba(52,211,153,0.4)]" />
+                    <Target size={48} className="text-secondary/50 mb-4 drop-shadow-[0_0_12px_rgba(56,217,197,0.4)]" />
                     <h3 className="text-2xl font-heading font-bold text-on-surface mb-2">Curriculum Mastered</h3>
                     <p className="text-on-surface-variant max-w-md">You have synthesized all 31 modules. Review your Analytics or consult the AI Mentor for advanced challenges.</p>
                   </div>

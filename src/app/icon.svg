@@ -1,0 +1,23 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sf-spark-grad" x1="13" y1="6" x2="19" y2="26" gradientUnits="userSpaceOnUse">
+      <stop stopColor="#38D9C5" />
+      <stop offset="1" stopColor="#14B8A6" />
+    </linearGradient>
+    <linearGradient id="sf-bracket-grad" x1="6" y1="10" x2="26" y2="22" gradientUnits="userSpaceOnUse">
+      <stop stopColor="#9185FF" />
+      <stop offset="1" stopColor="#7A6DF4" />
+    </linearGradient>
+  </defs>
+
+  <rect width="32" height="32" rx="8" fill="#151D32" stroke="rgba(145, 133, 255, 0.3)" stroke-width="1.5"/>
+
+  <!-- Left Code Bracket: < -->
+  <path d="M9.5 11L5.5 16L9.5 21" stroke="url(#sf-bracket-grad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Right Code Bracket: > -->
+  <path d="M22.5 11L26.5 16L22.5 21" stroke="url(#sf-bracket-grad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Central Lightning Spark -->
+  <path d="M17.5 6.5L12.5 15H17L14.5 25.5L20.5 13.5H16L17.5 6.5Z" fill="url(#sf-spark-grad)"/>
+</svg>

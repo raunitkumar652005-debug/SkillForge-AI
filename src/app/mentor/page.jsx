@@ -6,7 +6,7 @@ import MentorClient from "./MentorClient"
 export const dynamic = "force-dynamic"
 
 export const metadata = {
-  title: "AI Mentor | WebDev Mentor AI",
+  title: "AI Mentor | SkillForge AI",
   description: "Interactive AI coding companion and full-stack engineering mentor."
 }
 

@@ -7,8 +7,8 @@ import { PricingClient } from './PricingClient';
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-  title: 'Subscription Plans & Pricing | WebDev Mentor AI',
-  description: 'Unlock full access to AI Mentor, AI-graded Quizzes, and Mock Technical Interviews in WebDev Mentor AI.'
+  title: 'Subscription Plans & Pricing | SkillForge AI',
+  description: 'Unlock full access to AI Mentor, AI-graded Quizzes, and Mock Technical Interviews in SkillForge AI.'
 };
 
 export default async function PricingPage(props) {

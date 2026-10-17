@@ -19,6 +19,7 @@ import {
   Menu,
   X
 } from "lucide-react"
+import { BrandLogo } from "@/components/ui/BrandLogo"
 
 export function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false)
@@ -90,13 +91,13 @@ export function Sidebar() {
         </button>
 
         <div className="h-16 flex items-center border-b border-outline-variant/30 overflow-hidden">
-        <div className={`flex items-center gap-3 text-primary font-heading font-bold text-lg tracking-tight ${isCollapsed ? 'md:px-0 md:justify-center px-6 w-full' : 'px-6 w-full'}`}>
-          <div className="w-8 h-8 rounded-md bg-gradient-to-br from-primary to-secondary-container flex items-center justify-center shrink-0">
-            <Bot size={20} className="text-[#060911]" />
-          </div>
-          <span className={`truncate whitespace-nowrap ${isCollapsed ? 'md:hidden' : ''}`}>WebDev Mentor</span>
+          <Link
+            href="/"
+            className={`flex items-center ${isCollapsed ? 'md:px-0 md:justify-center px-6 w-full' : 'px-6 w-full'} transition-opacity hover:opacity-90`}
+          >
+            <BrandLogo size="md" collapsed={isCollapsed} />
+          </Link>
         </div>
-      </div>
       <div className={`flex-1 py-6 space-y-1 overflow-y-auto ${isCollapsed ? 'md:px-2 px-4' : 'px-4'}`}>
         <div className={`text-xs font-mono font-medium text-on-surface-variant mb-4 px-2 uppercase tracking-widest truncate ${isCollapsed ? 'md:hidden' : ''}`}>
           Platform Tools

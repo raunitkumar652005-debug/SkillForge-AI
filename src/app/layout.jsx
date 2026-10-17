@@ -21,8 +21,15 @@ const jetbrainsMono = JetBrains_Mono({
 import { AppLayout } from "@/components/layout/AppLayout";
 
 export const metadata = {
-  title: "WebDev Mentor AI Platform",
-  description: "Hyper-refined developer intelligence terminal",
+  title: {
+    default: "SkillForge AI — Learn. Build. Practice. Get Hired.",
+    template: "%s | SkillForge AI"
+  },
+  description: "An AI-powered developer learning platform for mastering concepts, building projects, practicing quizzes, preparing for interviews, and tracking progress.",
+  keywords: ["SkillForge AI", "Full-Stack Development", "AI Coding Mentor", "Technical Interview Prep", "Interactive Quizzes"],
+  icons: {
+    icon: "/icon.svg"
+  }
 };
 
 export default function RootLayout({ children }) {

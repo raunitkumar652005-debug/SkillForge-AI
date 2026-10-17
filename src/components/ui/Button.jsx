@@ -2,9 +2,10 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = {
-  primary: "bg-gradient-to-br from-primary to-[#3B82F6] text-[#060911] font-black hover:scale-[1.01] hover:shadow-[0_0_16px_rgba(6,182,212,0.4)] transition-all",
-  secondary: "bg-[#131d31]/60 border border-[#334155] text-[#F8FAFC] hover:border-primary hover:bg-primary/10 transition-all",
-  monospace: "h-[28px] font-mono text-xs bg-surface-bright border border-[#334155] text-on-surface hover:border-primary transition-colors px-2",
+  primary: "bg-gradient-to-r from-primary via-[#8A7CFF] to-[#7A6DF4] text-[#0B1020] font-bold hover:scale-[1.01] hover:shadow-[0_0_18px_rgba(145,133,255,0.35)] transition-all",
+  secondary: "bg-[#151D32]/80 border border-outline-variant/60 text-[#F4F6FC] hover:border-primary/80 hover:bg-primary/10 transition-all",
+  outline: "bg-[#151D32]/60 border border-outline-variant/50 text-[#F4F6FC] hover:bg-surface-bright hover:border-primary/50 transition-all",
+  monospace: "h-[28px] font-mono text-xs bg-surface-bright border border-outline-variant text-on-surface hover:border-primary transition-colors px-2",
   ghost: "hover:bg-surface-bright text-on-surface-variant hover:text-on-surface transition-colors"
 }
 

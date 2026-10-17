@@ -1,4 +1,4 @@
-import { Bell, Terminal, LogOut } from "lucide-react"
+import { Sparkles, LogOut } from "lucide-react"
 import { Badge } from "@/components/ui/Badge"
 import { auth, signOut } from "@/auth"
 import { NotificationDropdown } from "./NotificationDropdown"
@@ -12,9 +12,9 @@ export async function TopBar() {
         {/* Search removed as per user request */}
       </div>
       <div className="flex items-center gap-4">
-        <Badge status="info" className="hidden sm:inline-flex">
-          <Terminal size={12} className="mr-1" />
-          Agent Ready
+        <Badge status="info" className="hidden sm:inline-flex items-center rounded-full px-2.5 py-0.5 text-on-surface">
+          <Sparkles size={12} className="text-secondary mr-1 shrink-0" />
+          AI Powered Learning
         </Badge>
         <NotificationDropdown />
         {session?.user && (

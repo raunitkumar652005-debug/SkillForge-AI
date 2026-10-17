@@ -1,6 +1,11 @@
 import { signIn } from "@/auth"
 import { Button } from "@/components/ui/Button"
-import { Bot } from "lucide-react"
+import { BrandIcon } from "@/components/ui/BrandLogo"
+
+export const metadata = {
+  title: "Sign In | SkillForge AI",
+  description: "Sign in to SkillForge AI — Learn. Build. Practice. Get Hired.",
+};
 
 export default async function LoginPage(props) {
   const searchParams = await props.searchParams;
@@ -13,12 +18,22 @@ export default async function LoginPage(props) {
       <div className="absolute bottom-1/4 -right-64 w-96 h-96 bg-secondary/10 blur-[120px] rounded-full pointer-events-none"></div>
 
       <div className="w-full max-w-md bg-surface-dim/80 backdrop-blur-xl p-8 md:p-12 rounded-3xl border border-outline-variant/30 shadow-[0_8px_32px_rgba(0,0,0,0.4)] relative z-10 flex flex-col items-center text-center">
-        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-surface-bright to-surface-dim border border-outline-variant/40 shadow-[inset_0_2px_4px_rgba(255,255,255,0.05)] flex items-center justify-center mb-6">
-          <Bot size={32} className="text-primary drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
+        <div className="mb-5 flex justify-center">
+          <BrandIcon size={56} className="shadow-[0_0_24px_rgba(145,133,255,0.25)] rounded-2xl" />
         </div>
         
-        <h1 className="text-3xl font-heading font-bold text-on-surface mb-2">WebDev Mentor AI</h1>
-        <p className="text-on-surface-variant mb-6 text-sm max-w-xs">Sign in to access your neural curriculum and AI mentoring sessions.</p>
+        <div className="flex items-center gap-1.5 justify-center mb-1">
+          <h1 className="text-3xl font-heading font-black text-on-surface">Skill<span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Forge</span></h1>
+          <span className="text-xs font-mono font-bold px-1.5 py-0.5 rounded bg-primary/10 text-primary border border-primary/25 tracking-widest uppercase">AI</span>
+        </div>
+
+        <p className="text-primary font-mono text-xs font-semibold uppercase tracking-wider mb-2">
+          Learn. Build. Practice. Get Hired.
+        </p>
+
+        <p className="text-on-surface-variant mb-6 text-sm max-w-xs leading-relaxed">
+          Forge your full-stack engineering skills with intelligent AI mentorship, quizzes, and mock interviews.
+        </p>
 
         {error === "OAuthAccountNotLinked" && (
           <div className="w-full bg-red-500/10 border border-red-500/20 text-red-500 text-sm rounded-xl p-4 mb-6 text-left">
