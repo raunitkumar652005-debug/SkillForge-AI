@@ -21,12 +21,44 @@ const jetbrainsMono = JetBrains_Mono({
 import { AppLayout } from "@/components/layout/AppLayout";
 
 export const metadata = {
+  metadataBase: new URL("https://skill-forge-ai-kappa.vercel.app"),
   title: {
     default: "SkillForge AI — Learn. Build. Practice. Get Hired.",
     template: "%s | SkillForge AI"
   },
-  description: "An AI-powered developer learning platform for mastering concepts, building projects, practicing quizzes, preparing for interviews, and tracking progress.",
-  keywords: ["SkillForge AI", "Full-Stack Development", "AI Coding Mentor", "Technical Interview Prep", "Interactive Quizzes"],
+  description: "Developed by Raunit — Learn. Build. Practice. Get Hired.",
+  keywords: [
+    "SkillForge AI",
+    "Full-Stack Development",
+    "AI Coding Mentor",
+    "Technical Interview Prep",
+    "Interactive Quizzes"
+  ],
+  authors: [{ name: "Raunit" }],
+  creator: "Raunit",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://skill-forge-ai-kappa.vercel.app",
+    siteName: "SkillForge AI",
+    title: "SkillForge AI — Learn. Build. Practice. Get Hired.",
+    description: "Developed by Raunit — Learn. Build. Practice. Get Hired.",
+    images: [
+      {
+        url: "/icon.svg",
+        width: 1200,
+        height: 630,
+        alt: "SkillForge AI — Developed by Raunit"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SkillForge AI — Learn. Build. Practice. Get Hired.",
+    description: "Developed by Raunit — Learn. Build. Practice. Get Hired.",
+    images: ["/icon.svg"],
+    creator: "@Raunit"
+  },
   icons: {
     icon: "/icon.svg"
   }
