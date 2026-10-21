@@ -113,10 +113,10 @@ export function NotificationDropdown() {
 
       {isOpen && (
         <div 
-          className="absolute top-12 right-0 w-80 sm:w-96 bg-surface-container border border-outline-variant/30 shadow-2xl rounded-2xl z-50 overflow-hidden flex flex-col max-h-[80vh]"
+          className="fixed top-16 inset-x-3 min-[375px]:inset-x-4 sm:inset-x-auto sm:absolute sm:top-12 sm:left-auto sm:right-0 sm:w-96 max-w-md mx-auto sm:max-w-none sm:mx-0 bg-surface-container border border-outline-variant/30 shadow-2xl rounded-2xl z-50 overflow-hidden flex flex-col max-h-[calc(100dvh-5rem)] sm:max-h-[80vh]"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="p-4 border-b border-outline-variant/30 flex items-center justify-between bg-surface-dim/50">
+          <div className="p-4 border-b border-outline-variant/30 flex items-center justify-between bg-surface-dim/50 shrink-0">
             <h3 className="font-heading font-semibold text-on-surface">Notifications</h3>
             <div className="flex items-center gap-2">
               {unreadCount > 0 && (
